@@ -1,0 +1,21 @@
+syntax asm "\.(S|s|asm)$"
+magic "assembler source"
+comment ";"
+
+#Labels
+color lightred "^[[:space:]]*[A-Z_a-z]+:[[:space:]]*$"
+
+#Opcodes
+color lightblue  "\<(adc|and|asl|bcc|bcs|beq|bit|bmi|bne|bpl|brk|bvc|bvs|clc|cld|cli|clv|cmp|cpx|cpy|dec|dex|dey|eor|inc|inx|iny|jmp|jsr|lda|ldx|ldy|lsr|nop|ora|pha|php|pla|plp|rol|ror|rti|rts|sbc|sec|sed|sei|sta|stx|sty|tax|tay|tsx|txa|txs|tya)\>"
+
+#Pseudo
+color yellow "\!(8|16|24|32|fill|align|convtab|text|pet|raw|scr|scrxor|to|source|binary|zone|sl|if|ifdef|ifndef|for|set|do|endoffile|warn|error|serious|initmem|pseudopc|cpu|al|as|rl|rs|cbm|subzone|zone|realpc)"
+
+#Strings
+color brightyellow "<[^= 	]*>" ""(\\.|[^"])*""
+
+#Comments
+color lightgreen ";.*"
+
+#Trailing whitespace
+color green "[[:space:]]+$"
